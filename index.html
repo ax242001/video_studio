@@ -1,0 +1,1650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProEdit | Professional Video Editing Services</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            line-height: 1.3;
+            margin-bottom: 1rem;
+            color: #0a58ca;
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 700;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        h3 {
+            font-size: 1.8rem;
+        }
+
+        h4 {
+            font-size: 1.4rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #0a58ca;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            color: #666;
+            font-size: 1.2rem;
+        }
+
+        /* Header & Navigation */
+        .header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: box-shadow 0.3s;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #0d6efd;
+        }
+
+        .logo img {
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-item {
+            margin-left: 2rem;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+            padding: 0.5rem 0;
+            position: relative;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: #0d6efd;
+        }
+
+        .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: #0d6efd;
+            border-radius: 2px;
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+        }
+
+        .bar {
+            display: block;
+            width: 25px;
+            height: 3px;
+            margin: 5px auto;
+            background-color: #333;
+            transition: all 0.3s ease;
+        }
+
+        /* Banner/Hero Section */
+        .banner {
+            height: 90vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(rgba(13, 110, 253, 0.8), rgba(10, 88, 202, 0.9));
+            color: white;
+            margin-top: 80px;
+            text-align: center;
+        }
+
+        .banner-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .banner h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            color: white;
+        }
+
+        .banner p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background-color: #0d6efd;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #0a58ca;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-secondary {
+            background-color: white;
+            color: #0d6efd;
+            border: 2px solid #0d6efd;
+        }
+
+        .btn-secondary:hover {
+            background-color: #0d6efd;
+            color: white;
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: #0d6efd;
+            border: 2px solid #0d6efd;
+        }
+
+        .btn-outline:hover {
+            background-color: #0d6efd;
+            color: white;
+        }
+
+        .btn-block {
+            display: block;
+            width: 100%;
+            text-align: center;
+        }
+
+        .btn-text {
+            color: #0d6efd;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .btn-text:hover {
+            color: #0a58ca;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* Sections */
+        .section {
+            padding: 5rem 0;
+        }
+
+        /* Home/Intro Section */
+        .intro-section {
+            text-align: center;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: 2.5rem;
+            color: #0d6efd;
+            margin-bottom: 0.5rem;
+        }
+
+        /* About Section */
+        .about-section {
+            background-color: white;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .mission-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .mission-card {
+            text-align: center;
+            padding: 2rem;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .mission-icon {
+            font-size: 2.5rem;
+            color: #0d6efd;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Services Section */
+        .services-section {
+            background-color: #f8f9fa;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            color: #0d6efd;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Detailed Services */
+        .service-detail {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-bottom: 5rem;
+        }
+
+        .service-detail:nth-child(even) .service-detail-content {
+            order: 2;
+        }
+
+        .service-detail:nth-child(even) .service-detail-image {
+            order: 1;
+        }
+
+        .service-detail-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-features {
+            list-style: none;
+            margin: 1.5rem 0;
+        }
+
+        .service-features li {
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .service-features i {
+            color: #0d6efd;
+            margin-right: 10px;
+        }
+
+        .service-pricing {
+            background-color: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-top: 2rem;
+        }
+
+        .price {
+            color: #0d6efd;
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        /* Packages Section */
+        .packages-section {
+            background-color: white;
+        }
+
+        .packages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .package-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            padding: 2rem;
+            position: relative;
+            transition: transform 0.3s;
+            border: 1px solid #eee;
+        }
+
+        .package-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .package-card.popular {
+            border: 2px solid #0d6efd;
+        }
+
+        .package-badge {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background-color: #0d6efd;
+            color: white;
+            padding: 0.5rem 1rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            border-bottom-left-radius: 5px;
+        }
+
+        .package-header {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .package-price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #0d6efd;
+        }
+
+        .package-price span {
+            font-size: 1rem;
+            color: #666;
+        }
+
+        .package-features {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .package-features li {
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .package-features .fa-check {
+            color: #28a745;
+            margin-right: 10px;
+        }
+
+        .package-features .fa-times {
+            color: #dc3545;
+            margin-right: 10px;
+        }
+
+        /* Process Section */
+        .process-section {
+            background-color: #f8f9fa;
+        }
+
+        .process-steps {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .process-step {
+            flex: 1;
+            min-width: 150px;
+            text-align: center;
+            padding: 1.5rem;
+        }
+
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background-color: #0d6efd;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0 auto 1rem;
+        }
+
+        /* Testimonials Section */
+        .testimonials-section {
+            background-color: white;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border: 1px solid #eee;
+        }
+
+        .testimonial-content {
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .testimonial-content::before {
+            content: '"';
+            font-size: 3rem;
+            color: #0d6efd;
+            position: absolute;
+            left: -10px;
+            top: -10px;
+            opacity: 0.3;
+        }
+
+        .testimonial-author h4 {
+            margin-bottom: 0.3rem;
+            color: #0a58ca;
+        }
+
+        .testimonial-author p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background-color: #f8f9fa;
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .contact-details {
+            margin-top: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            margin-bottom: 2rem;
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background-color: #e7f1ff;
+            color: #0d6efd;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            margin-right: 1rem;
+            flex-shrink: 0;
+        }
+
+        .contact-text h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+
+        .social-contact {
+            margin-top: 3rem;
+        }
+
+        .social-contact h3 {
+            margin-bottom: 1rem;
+        }
+
+        /* Form Styles */
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #0d6efd;
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+        }
+
+        .checkbox-group input {
+            width: auto;
+            margin-right: 10px;
+        }
+
+        .checkbox-group label {
+            margin-bottom: 0;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            background-color: white;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            margin-bottom: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            width: 100%;
+            padding: 1.5rem;
+            background-color: white;
+            border: none;
+            text-align: left;
+            font-size: 1.1rem;
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .faq-question:hover {
+            background-color: #f8f9fa;
+        }
+
+        .faq-answer {
+            padding: 0 1.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s, padding 0.3s;
+        }
+
+        .faq-answer.active {
+            padding: 0 1.5rem 1.5rem;
+            max-height: 500px;
+        }
+
+        .faq-question i {
+            transition: transform 0.3s;
+        }
+
+        .faq-question.active i {
+            transform: rotate(180deg);
+        }
+
+        /* Call to Action */
+        .cta-section {
+            background-color: #0d6efd;
+            color: white;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            color: white;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #052c65;
+            color: white;
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-section h3 {
+            color: white;
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: white;
+        }
+
+        .contact-info li {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+
+        .contact-info i {
+            margin-right: 10px;
+            color: #6ea8fe;
+            margin-top: 5px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .social-icons a:hover {
+            background-color: #0d6efd;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+            
+            .banner h1 {
+                font-size: 2.8rem;
+            }
+            
+            .about-content,
+            .service-detail,
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .service-detail:nth-child(even) .service-detail-content,
+            .service-detail:nth-child(even) .service-detail-image {
+                order: initial;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+            
+            .hamburger.active .bar:nth-child(2) {
+                opacity: 0;
+            }
+            
+            .hamburger.active .bar:nth-child(1) {
+                transform: translateY(8px) rotate(45deg);
+            }
+            
+            .hamburger.active .bar:nth-child(3) {
+                transform: translateY(-8px) rotate(-45deg);
+            }
+            
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 80px;
+                flex-direction: column;
+                background-color: white;
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+                padding: 2rem 0;
+            }
+            
+            .nav-menu.active {
+                left: 0;
+            }
+            
+            .nav-item {
+                margin: 1.5rem 0;
+            }
+            
+            .banner {
+                height: 80vh;
+                margin-top: 70px;
+            }
+            
+            .banner h1 {
+                font-size: 2.2rem;
+            }
+            
+            .banner p {
+                font-size: 1.1rem;
+            }
+            
+            .process-steps {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .container {
+                padding: 0 15px;
+            }
+            
+            .section {
+                padding: 3rem 0;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .banner {
+                height: 70vh;
+            }
+            
+            .banner h1 {
+                font-size: 1.8rem;
+            }
+            
+            .stats {
+                gap: 2rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .cta-buttons .btn {
+                width: 100%;
+                max-width: 300px;
+                text-align: center;
+            }
+        }
+
+        /* Active section highlighting */
+        .section.active {
+            background-color: rgba(13, 110, 253, 0.02);
+            border-radius: 10px;
+            padding: 5rem 20px;
+            transition: background-color 0.3s;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="#" class="logo">
+                    <!-- Logo placeholder - replace with your logo -->
+                    <div style="width: 40px; height: 40px; background-color: #0d6efd; border-radius: 5px; margin-right: 10px; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">PE</div>
+                    <span>ProEdit</span>
+                </a>
+                
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="#home" class="nav-link active">Home</a></li>
+                    <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="#services" class="nav-link">Services</a></li>
+                    <li class="nav-item"><a href="#packages" class="nav-link">Packages</a></li>
+                    <li class="nav-item"><a href="#testimonials" class="nav-link">Testimonials</a></li>
+                    <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+                
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Banner/Hero Section -->
+    <section class="banner" id="home">
+        <div class="container">
+            <div class="banner-content">
+                <h1>Professional Video Editing Services</h1>
+                <p>Transform your raw footage into captivating stories with our expert editing team. Quality, creativity, and fast delivery guaranteed.</p>
+                <div class="cta-buttons">
+                    <a href="#services" class="btn btn-primary">Our Services</a>
+                    <a href="#contact" class="btn btn-secondary">Get a Quote</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section about-section" id="about">
+        <div class="container">
+            <h2 class="section-title">About ProEdit</h2>
+            
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Your Story, Expertly Told</h3>
+                    <p>Founded in 2015, ProEdit began as a small team of passionate video editors with a shared vision: to help creators and businesses tell their stories through exceptional video editing.</p>
+                    <p>What started as a freelance venture has grown into a full-service video editing agency serving clients worldwide. We've worked on everything from YouTube content and corporate videos to documentaries and short films.</p>
+                    <p>Our journey has been driven by a commitment to quality, innovation, and building lasting relationships with our clients.</p>
+                    
+                    <div class="stats">
+                        <div class="stat-item">
+                            <h3>500+</h3>
+                            <p>Projects Completed</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>50+</h3>
+                            <p>Satisfied Clients</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>24/7</h3>
+                            <p>Support Available</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-image">
+                    <!-- Placeholder image - replace with your own -->
+                    <div style="width: 100%; height: 400px; background: linear-gradient(135deg, #0d6efd, #6ea8fe); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem;">
+                        Professional Video Editing Team
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mission-grid">
+                <div class="mission-card">
+                    <div class="mission-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3>Our Mission</h3>
+                    <p>To empower creators and businesses with professional video editing services that elevate their content and help them connect with their audience.</p>
+                </div>
+                
+                <div class="mission-card">
+                    <div class="mission-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3>Our Vision</h3>
+                    <p>To become the world's most trusted video editing partner, recognized for creative excellence and technical expertise.</p>
+                </div>
+                
+                <div class="mission-card">
+                    <div class="mission-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Our Values</h3>
+                    <p>Creativity, integrity, collaboration, and continuous improvement drive everything we do. We believe in building partnerships.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section services-section" id="services">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <p class="section-subtitle">We offer comprehensive video editing and post-production services to bring your vision to life.</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-film"></i>
+                    </div>
+                    <h3>Video Editing</h3>
+                    <p>Professional cutting, trimming, and sequencing to create seamless video content.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3>Color Grading</h3>
+                    <p>Enhance visual appeal with professional color correction and cinematic grading.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-music"></i>
+                    </div>
+                    <h3>Audio Enhancement</h3>
+                    <p>Clean up audio, add background music, and perfect sound quality.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <h3>Motion Graphics</h3>
+                    <p>Add dynamic animations, titles, and visual effects to engage your audience.</p>
+                </div>
+            </div>
+            
+            <!-- Detailed Service 1 -->
+            <div class="service-detail">
+                <div class="service-detail-content">
+                    <h3><i class="fas fa-film"></i> Professional Video Editing</h3>
+                    <p>Our core service includes comprehensive video editing from raw footage to polished final product. We handle cutting, sequencing, pacing, and storytelling to create engaging content.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check-circle"></i> Cutting and trimming footage</li>
+                        <li><i class="fas fa-check-circle"></i> Adding transitions and effects</li>
+                        <li><i class="fas fa-check-circle"></i> Multi-camera editing</li>
+                        <li><i class="fas fa-check-circle"></i> Storytelling and narrative structure</li>
+                        <li><i class="fas fa-check-circle"></i> Format optimization for different platforms</li>
+                    </ul>
+                    <div class="service-pricing">
+                        <h4>Starting at: <span class="price">$150</span> per minute of final video</h4>
+                        <p>Basic editing packages include up to 2 rounds of revisions</p>
+                    </div>
+                </div>
+                <div class="service-detail-image">
+                    <!-- Placeholder image -->
+                    <div style="width: 100%; height: 300px; background: linear-gradient(135deg, #0a58ca, #0d6efd); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem;">
+                        Video Editing Workstation
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Detailed Service 2 -->
+            <div class="service-detail">
+                <div class="service-detail-image">
+                    <!-- Placeholder image -->
+                    <div style="width: 100%; height: 300px; background: linear-gradient(135deg, #6ea8fe, #0d6efd); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem;">
+                        Color Grading Studio
+                    </div>
+                </div>
+                <div class="service-detail-content">
+                    <h3><i class="fas fa-palette"></i> Color Correction & Grading</h3>
+                    <p>Enhance the visual appeal of your videos with professional color correction and cinematic grading. We ensure consistency across all shots and create the perfect mood for your story.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check-circle"></i> Basic color correction</li>
+                        <li><i class="fas fa-check-circle"></i> Advanced cinematic grading</li>
+                        <li><i class="fas fa-check-circle"></i> Shot matching and consistency</li>
+                        <li><i class="fas fa-check-circle"></i> Creative look development</li>
+                        <li><i class="fas fa-check-circle"></i> HDR grading available</li>
+                    </ul>
+                    <div class="service-pricing">
+                        <h4>Starting at: <span class="price">$100</span> per minute of footage</h4>
+                        <p>Includes basic correction + one creative look</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Packages Section -->
+    <section class="section packages-section" id="packages">
+        <div class="container">
+            <h2 class="section-title">Service Packages</h2>
+            <p class="section-subtitle">Choose the package that best fits your needs and budget.</p>
+            
+            <div class="packages-grid">
+                <div class="package-card">
+                    <div class="package-header">
+                        <h3>Basic Edit</h3>
+                        <div class="package-price">$150<span>/min</span></div>
+                    </div>
+                    <ul class="package-features">
+                        <li><i class="fas fa-check"></i> Basic cutting and trimming</li>
+                        <li><i class="fas fa-check"></i> Simple transitions</li>
+                        <li><i class="fas fa-check"></i> Basic color correction</li>
+                        <li><i class="fas fa-check"></i> Audio leveling</li>
+                        <li><i class="fas fa-times"></i> Motion graphics</li>
+                        <li><i class="fas fa-times"></i> Advanced color grading</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-outline">Select Package</a>
+                </div>
+                
+                <div class="package-card popular">
+                    <div class="package-badge">Most Popular</div>
+                    <div class="package-header">
+                        <h3>Professional</h3>
+                        <div class="package-price">$300<span>/min</span></div>
+                    </div>
+                    <ul class="package-features">
+                        <li><i class="fas fa-check"></i> Advanced editing</li>
+                        <li><i class="fas fa-check"></i> Custom transitions</li>
+                        <li><i class="fas fa-check"></i> Color grading</li>
+                        <li><i class="fas fa-check"></i> Audio enhancement</li>
+                        <li><i class="fas fa-check"></i> Basic motion graphics</li>
+                        <li><i class="fas fa-times"></i> 3D animation</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-primary">Select Package</a>
+                </div>
+                
+                <div class="package-card">
+                    <div class="package-header">
+                        <h3>Premium</h3>
+                        <div class="package-price">$500<span>/min</span></div>
+                    </div>
+                    <ul class="package-features">
+                        <li><i class="fas fa-check"></i> All Professional features</li>
+                        <li><i class="fas fa-check"></i> Advanced motion graphics</li>
+                        <li><i class="fas fa-check"></i> 3D animation elements</li>
+                        <li><i class="fas fa-check"></i> Custom sound design</li>
+                        <li><i class="fas fa-check"></i> Unlimited revisions</li>
+                        <li><i class="fas fa-check"></i> Priority turnaround</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-outline">Select Package</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="section process-section">
+        <div class="container">
+            <h2 class="section-title">Our Work Process</h2>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3>Consultation</h3>
+                    <p>We discuss your vision, requirements, and timeline</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3>Footage Review</h3>
+                    <p>We analyze your raw footage and plan the edit</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3>First Cut</h3>
+                    <p>We deliver the first edit for your feedback</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h3>Revisions</h3>
+                    <p>We refine based on your feedback</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">5</div>
+                    <h3>Final Delivery</h3>
+                    <p>You receive the final high-quality video files</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section testimonials-section" id="testimonials">
+        <div class="container">
+            <h2 class="section-title">What Our Clients Say</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"ProEdit transformed my YouTube channel! The editing quality is exceptional and delivery is always on time. Their attention to detail is remarkable."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <h4>Sarah Johnson</h4>
+                        <p>Content Creator</p>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"Our corporate videos have never looked better. Professional, creative, and excellent communication throughout. Highly recommended for any business."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <h4>Michael Chen</h4>
+                        <p>Marketing Director</p>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"Outstanding work on our documentary. The storytelling and pacing were perfectly executed. They truly understand narrative flow and emotional impact."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <h4>Alex Rivera</h4>
+                        <p>Documentary Filmmaker</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact-section" id="contact">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            <p class="section-subtitle">Ready to start your next video project? Get in touch for a free consultation.</p>
+            
+            <div class="contact-container">
+                <!-- Contact Information -->
+                <div class="contact-info">
+                    <h3>Get In Touch</h3>
+                    <p>We're here to help with your video editing needs. Reach out through any of these channels.</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Our Office</h4>
+                                <p>123 Creative Street<br>Media City, CA 90210<br>United States</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Phone Number</h4>
+                                <p>+1 (555) 123-4567<br>Mon-Fri, 9am-6pm PST</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Email Address</h4>
+                                <p>info@proedit.com<br>support@proedit.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Business Hours</h4>
+                                <p>Monday - Friday: 9am - 6pm<br>Saturday: 10am - 4pm<br>Sunday: Closed</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="social-contact">
+                        <h4>Follow Us</h4>
+                        <div class="social-icons">
+                            <a href="#"><i class="fab fa-facebook"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Contact Form -->
+                <div class="contact-form">
+                    <h3>Send Us a Message</h3>
+                    <p>Fill out the form below and we'll get back to you within 24 hours.</p>
+                    
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="service">Service Interested In</label>
+                            <select id="service" name="service">
+                                <option value="">Select a service</option>
+                                <option value="video-editing">Video Editing</option>
+                                <option value="color-grading">Color Grading</option>
+                                <option value="audio">Audio Enhancement</option>
+                                <option value="motion">Motion Graphics</option>
+                                <option value="package">Package Deal</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Project Details *</label>
+                            <textarea id="message" name="message" rows="5" required placeholder="Tell us about your project, timeline, and any specific requirements..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary btn-block">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section faq-section">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>What is your typical turnaround time?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Turnaround time depends on project complexity. Basic edits: 2-3 days. Full projects with multiple services: 1-2 weeks. We offer rush services for an additional fee.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>How do I send you my footage?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We accept footage via Google Drive, Dropbox, WeTransfer, or physical drives. We'll provide secure upload links after project confirmation.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Do you offer revisions?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes! Basic packages include 2 rounds of revisions. Premium packages include unlimited revisions until you're completely satisfied.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>What is your payment process?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We require 50% deposit to begin work, with the remaining 50% due upon project completion. We accept credit cards, PayPal, and bank transfers.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="section cta-section">
+        <div class="container">
+            <h2>Ready to Elevate Your Videos?</h2>
+            <p>Get in touch for a free consultation and quote for your project.</p>
+            <div class="cta-buttons">
+                <a href="#contact" class="btn btn-secondary">Contact Us</a>
+                <a href="#services" class="btn btn-primary">View All Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <a href="#home" class="logo">
+                        <div style="width: 40px; height: 40px; background-color: white; border-radius: 5px; margin-right: 10px; display: flex; align-items: center; justify-content: center; color: #0d6efd; font-weight: bold;">PE</div>
+                        <span>ProEdit</span>
+                    </a>
+                    <p>Professional video editing services for creators and businesses worldwide.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Our Services</h3>
+                    <ul>
+                        <li><a href="#services">Video Editing</a></li>
+                        <li><a href="#services">Color Grading</a></li>
+                        <li><a href="#services">Audio Enhancement</a></li>
+                        <li><a href="#services">Motion Graphics</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-envelope"></i> info@proedit.com</li>
+                        <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Creative St, Media City</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 ProEdit Video Editing Services. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile Navigation Toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        if (hamburger && navMenu) {
+            hamburger.addEventListener('click', () => {
+                hamburger.classList.toggle('active');
+                navMenu.classList.toggle('active');
+            });
+        
+            // Close mobile menu when clicking on a link
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    hamburger.classList.remove('active');
+                    navMenu.classList.remove('active');
+                });
+            });
+        }
+        
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const faqItem = button.parentElement;
+                const answer = faqItem.querySelector('.faq-answer');
+                
+                // Close other open FAQ items
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    if (item !== faqItem) {
+                        item.querySelector('.faq-question').classList.remove('active');
+                        item.querySelector('.faq-answer').classList.remove('active');
+                    }
+                });
+                
+                // Toggle current FAQ item
+                button.classList.toggle('active');
+                answer.classList.toggle('active');
+            });
+        });
+        
+        // Contact Form Validation
+        const contactForm = document.getElementById('contactForm');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Basic validation
+                const name = document.getElementById('name').value.trim();
+                const email = document.getElementById('email').value.trim();
+                const message = document.getElementById('message').value.trim();
+                
+                let isValid = true;
+                let errorMessage = '';
+                
+                // Clear previous error styles
+                document.querySelectorAll('.form-group input, .form-group textarea').forEach(input => {
+                    input.style.borderColor = '#ddd';
+                });
+                
+                // Name validation
+                if (name === '') {
+                    document.getElementById('name').style.borderColor = '#dc3545';
+                    isValid = false;
+                    errorMessage += 'Please enter your name.\n';
+                }
+                
+                // Email validation
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (email === '' || !emailRegex.test(email)) {
+                    document.getElementById('email').style.borderColor = '#dc3545';
+                    isValid = false;
+                    errorMessage += 'Please enter a valid email address.\n';
+                }
+                
+                // Message validation
+                if (message === '') {
+                    document.getElementById('message').style.borderColor = '#dc3545';
+                    isValid = false;
+                    errorMessage += 'Please enter your message.\n';
+                }
+                
+                if (isValid) {
+                    // In a real application, you would send the form data to a server here
+                    // For demo purposes, we'll just show a success message
+                    alert('Thank you for your message! We will get back to you within 24 hours.');
+                    contactForm.reset();
+                } else {
+                    alert('Please fix the following errors:\n\n' + errorMessage);
+                }
+            });
+        }
+        
+        // Add scroll effect to header
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 100) {
+                header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+            }
+            
+            // Highlight active section in navigation
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+        
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    const headerHeight = document.querySelector('.header').offsetHeight;
+                    const targetPosition = targetElement.offsetTop - headerHeight;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Initialize active navigation
+        document.addEventListener('DOMContentLoaded', () => {
+            // Set home as active initially
+            const homeLink = document.querySelector('a[href="#home"]');
+            if (homeLink) {
+                homeLink.classList.add('active');
+            }
+        });
+    </script>
+</body>
+</html>
